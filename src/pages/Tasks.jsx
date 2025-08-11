@@ -201,7 +201,7 @@ export default function Tasks() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0    backdrop-blur-lg  flex items-center justify-center p-4 z-50"
             onClick={() => setIsAddingTask(false)}
           >
             <motion.div 

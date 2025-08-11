@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="bg-gray-100 dark:bg-gray-800 p-4 flex justify-between items-center shadow-md">
       <Link to="/dashboard" className="font-bold text-xl text-indigo-600 dark:text-indigo-400"> CRM</Link>
       {user ? (
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           <Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
             <FiHome /> Dashboard
           </Link>
