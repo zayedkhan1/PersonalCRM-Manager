@@ -5,6 +5,7 @@ import { AuthProvider } from './context/AuthContext'
 import { ContactProvider } from './context/ContactContext'
 import Navbar from './components/Navbar'
 import ThemeToggle from './components/ThemeToggle'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
             <main className="flex-grow container mx-auto p-4">
               <Router />
             </main>
+            <Footer></Footer>
+        
           </div>
         </ContactProvider>
       </AuthProvider>

@@ -9,6 +9,8 @@ import EditContact from './pages/EditContact'
 import About from './pages/About'
 import Settings from './pages/Settings'
 import { AuthContext } from './context/AuthContext'
+import Deals from './pages/Deals'
+import Tasks from './pages/Tasks'
 
 function ProtectedRoute({ children }) {
   const { user } = useContext(AuthContext)
@@ -34,6 +36,19 @@ export default function Router() {
           <Contacts />
         </ProtectedRoute>
       } />
+       <Route path='/deals' element={
+        <ProtectedRoute>
+        <Deals></Deals>
+        </ProtectedRoute>
+      } /> 
+
+      <Route path='/tasks' element={
+         <ProtectedRoute>
+          <Tasks></Tasks>
+      </ProtectedRoute>
+      }
+     
+      ></Route>
       
       <Route path="/contacts/add" element={
         <ProtectedRoute>
@@ -46,7 +61,8 @@ export default function Router() {
           <EditContact />
         </ProtectedRoute>
       } />
-      
+
+          
       <Route path="/about" element={<About />} />
       {/* <Route path="/settings" element={
         <ProtectedRoute>

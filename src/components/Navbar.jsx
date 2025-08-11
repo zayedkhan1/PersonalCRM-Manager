@@ -24,9 +24,15 @@ export default function Navbar() {
           <Link to="/contacts" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
             <FiUsers /> Contacts
           </Link>
-          <Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
-            <FiSettings /> Settings
+          <Link to="/deals" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
+            <FiUsers /> Deals
           </Link>
+          <Link to="/tasks" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
+            <FiUsers /> Tasks
+          </Link>
+          {/* <Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
+            <FiSettings /> Settings
+          </Link> */}
           <button
             onClick={handleLogout}
             className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-600 flex items-center gap-1"
