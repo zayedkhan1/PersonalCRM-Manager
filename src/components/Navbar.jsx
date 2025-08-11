@@ -12,7 +12,7 @@ export default function Navbar() {
     logout()
     navigate('/login')
   }
-
+//need to desgint my login and register navicons
   return (
     <nav className="bg-gray-100 dark:bg-gray-800 p-4 flex justify-between items-center shadow-md">
       <Link to="/dashboard" className="font-bold text-xl text-indigo-600 dark:text-indigo-400"> CRM</Link>
