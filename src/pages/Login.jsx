@@ -21,7 +21,7 @@ export default function Login() {
     try {
       const result = await login({ email, password })
       if (result.success) {
-        navigate('/dashboard')
+        navigate('/homepage')
       } else {
         setError(result.message)
       }

@@ -2,24 +2,28 @@ import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 import { FiLogOut, FiUsers, FiHome, FiSettings } from 'react-icons/fi'
-
-
+import { TbLayoutDashboard } from "react-icons/tb";
+import { AiOutlineLogin } from "react-icons/ai";
+import { MdOutlineAppRegistration } from "react-icons/md";
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const handleLogout = () => {
     logout()
-    navigate('/login')
+    navigate('/')
   }
 //need to desgint my login and register navicons
   return (
     <nav className="bg-gray-100 dark:bg-gray-800 p-4 flex justify-between items-center shadow-md">
-      <Link to="/dashboard" className="font-bold text-xl text-indigo-600 dark:text-indigo-400"> CRM</Link>
+      <Link to="/ " className=" text-xl font-montserrat font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent dark:text-indigo-400 ml-5 "> CRM</Link>
       {user ? (
         <div className="flex items-center space-x-6">
+          <Link to="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
+            <FiHome />Home
+          </Link>
           <Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
-            <FiHome /> Dashboard
+            <TbLayoutDashboard /> Dashboard
           </Link>
           <Link to="/contacts" className="hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1">
             <FiUsers /> Contacts
@@ -41,9 +45,15 @@ export default function Navbar() {
           </button>
         </div>
       ) : (
-        <div>
-          <Link to="/login" className="mr-4 hover:text-indigo-600 dark:hover:text-indigo-400">Login</Link>
-          <Link to="/register" className="hover:text-indigo-600 dark:hover:text-indigo-400">Register</Link>
+        <div className='flex items-center justify-center mr-1 md:mr-5'>
+          <div className='flex items-center  text-md  hover:text-indigo-600 font-semibold'>
+          <AiOutlineLogin />
+          <Link to="/login" className="mr-4 dark:hover:text-indigo-400">  Login</Link>
+          </div>
+          <div className='flex items-center  text-md  hover:text-indigo-600 font-semibold'>
+         <MdOutlineAppRegistration />
+          <Link to="/register" className=" dark:hover:text-indigo-400">Register</Link>
+          </div>
         </div>
       )}
     </nav>

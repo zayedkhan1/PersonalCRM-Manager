@@ -11,7 +11,8 @@ import Settings from './pages/Settings'
 import { AuthContext } from './context/AuthContext'
 import Deals from './pages/Deals'
 import Tasks from './pages/Tasks'
-
+import HomePage from './pages/HomePage'
+import Home from './pages/HomePage'
 function ProtectedRoute({ children }) {
   const { user } = useContext(AuthContext)
   if (!user) return <Navigate to="/login" replace />
@@ -21,10 +22,17 @@ function ProtectedRoute({ children }) {
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+    <Route path="/" element={<Navigate to="/homepage" replace />} />
+      <Route path="/homepage" element={ <HomePage></HomePage> } />
+      {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       
+      <Route path="/" element={
+        <ProtectedRoute>
+          <HomePage></HomePage>
+        </ProtectedRoute>
+      } />
       <Route path="/dashboard" element={
         <ProtectedRoute>
           <Dashboard />

@@ -60,7 +60,7 @@ export default function Register() {
       })
 
       if (result.success) {
-        navigate('/contacts')
+        navigate('/dashboard')
       } else {
         setError(result.message || 'Registration failed')
       }
