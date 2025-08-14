@@ -20,7 +20,8 @@ export function ContactProvider({ children }) {
 
   const saveContacts = newContacts => {
     setContacts(newContacts)
-    if (user) {
+    if (user) {   
+      
       localStorage.setItem(CONTACTS_STORAGE_PREFIX + user.id, JSON.stringify(newContacts))
     }
   }

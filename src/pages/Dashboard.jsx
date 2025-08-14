@@ -37,6 +37,8 @@ export default function Dashboard() {
     { name: 'Jun', contacts: 24 },
   ]
 
+
+
   // Status counts
   const statusCounts = {
     'New': contacts.filter(c => c.status === 'New').length,
